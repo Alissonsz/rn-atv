@@ -5,12 +5,12 @@ import styles from './styles';
 import Pikachu from '../../../assets/pikachu.png';
 import TextField from '../textField/TextField';
 
-const LoginPage = () => {
+const LoginPage = (props) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handlePress = () => {
-    Alert.alert(`email: ${email} \npassword: ${password}`);
+    props.navigation.navigate("Home", { email: email });
   }
 
   return (
